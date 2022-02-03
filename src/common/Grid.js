@@ -16,6 +16,8 @@ const Grid = (props) => {
     bg,
     radius,
     border,
+    top,
+    left,
     cursor,
     children,
     _ref,
@@ -36,6 +38,8 @@ const Grid = (props) => {
     bg,
     radius,
     border,
+    top,
+    left,
     children,
     cursor,
   };
@@ -48,7 +52,7 @@ const Grid = (props) => {
 };
 
 Grid.defaultProps = {
-  width: '100%',
+  width: 'auto',
   height: 'auto',
   _ref: null,
   _onClick: () => {},
@@ -59,14 +63,17 @@ const ElGrid = styled.div`
   height: ${(props) => props.height};
   ${(props) => props.padding && `padding: ${props.padding};`}
   ${(props) => props.margin && `margin: ${props.margin};`}
+  ${(props) => props.position && `position: ${props.position};`}
   ${(props) => props.isFlex && 'display: flex;'}
   ${(props) => props.isWrap && 'flex-wrap: wrap;'}
   ${(props) => props.column && 'flex-direction: column;'}
-  ${(props) => `justify-content: ${props.justify};`};
-  ${(props) => `align-items: ${props.align};`};
+  ${(props) => props.justify && `justify-content: ${props.justify};`};
+  ${(props) => props.align && `align-items: ${props.align};`};
   ${(props) => props.background && `background: ${props.bg};`}
   ${(props) => props.radius && `border-radius: ${props.radius};`}
   ${(props) => props.border && `border: 1px solid ${props.border};`};
+  ${(props) => props.top && `top: ${props.top}px;`};
+  ${(props) => props.left && `left: ${props.left}px;`};
   ${(props) => props.cursor && `cursor: pointer;`};
 `;
 
