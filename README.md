@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT SHIELDS -->
+<div align='center'>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=blue"/>
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" />
+</div>
 
-## Available Scripts
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
 
-In the project directory, you can run:
+  <h3 align="center">원티드 집꾸미기 과제</h3>
 
-### `npm start`
+  <p align="center">
+    집꾸미기 집소개 기능에 포함되어 있는 사진과 가구 정보를 표현하는 프로젝트
+    <br />
+    <br />
+    <a href="https://zipccumigi.netlify.app/"><strong>배포 링크</strong></a>
+  </p>
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<hr>
+<br>
 
-### `npm test`
+<!-- 구현한 기능 -->
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🎯 구현한 기능
 
-### `npm run build`
+- [x] Tool tip 기능
+  - [x] 해당 가구 위치에 따른 돋보기 아이콘 표시
+  - [x] 돋보기 클릭시 가구 정보 표시, 닫기 아이콘으로 변경
+  - [x] 닫기 버튼을 클릭시 가구 정보 표시, 닫기 아이콘 사라짐.
+  - [x] 가구 정보와 닫기 아이콘은 하나만 표시(새로운 돋보기 아이콘을 누르면 기존의 돋보기, 가구 정보 사라짐 )
+  - [x] 입점 여부에 따라 가구 정보 다르게 표시
+- [x] 하단 상품목록 구현
+  - [x] 선택된 가구 표시 기능 (가구는 하나만 선택 가능, 새로운 가구 선택시 기존의 가구 사라짐)
+  - [x] 할인율 뱃지 표시
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<hr>
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- 설치 및 실행 -->
 
-### `npm run eject`
+## 📦 설치 및 실행
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Build
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### 실행
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+npm run start
+```
 
-## Learn More
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<hr>
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- 프로젝트 구조 -->
 
-### Code Splitting
+## 🗂 디렉토리 구조
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+.
+├── App.js
+├── components
+│   ├── ProductImageCard
+│   ├── ProductInfoCard
+│   ├── RoomImage
+│   └── ToolTip
+├── styles	# 초기 css 설정
+└── utils	# 상수, 함수
+    ├── constants.js
+    └── getPosition.js
+```
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="right">(<a href="#top">back to top</a>)</p>
