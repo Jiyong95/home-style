@@ -14,13 +14,7 @@ import React from 'react';
 import { ARROW_ICON } from 'utils';
 
 const ProductInfoCard = ({
-  productInfo: {
-    imageUrl,
-    productId,
-    productName,
-    discountRate,
-    priceDiscount,
-  },
+  productInfo: { imageUrl, productName, discountRate, priceDiscount },
 }) => {
   return (
     <Container>

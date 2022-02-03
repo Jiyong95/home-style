@@ -39,4 +39,4 @@ const ProductImageCard = ({ productList, clickedId, setClickedId }) => {
   );
 };
 
-export default ProductImageCard;
+export default React.memo(ProductImageCard);

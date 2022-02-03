@@ -1,4 +1,4 @@
-import ProductInfoCard from './ProductInfoCard/ProductInfoCard';
+import ProductInfoCard from './ProductInfoCard';
 import RoomImage from './RoomImage';
 import ToolTip from './ToolTip';
 import ProductImageCard from './ProductImageCard';

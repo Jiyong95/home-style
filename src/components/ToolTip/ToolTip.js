@@ -42,4 +42,4 @@ const ToolTip = ({ productInfo, clickedId, setClickedId }) => {
   );
 };
 
-export default ToolTip;
+export default React.memo(ToolTip);

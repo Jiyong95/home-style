@@ -22,13 +22,12 @@ const App = () => {
     getData();
   }, []);
 
-  console.log(data);
   return (
     <>
       {data ? (
         <>
           <Container isFlex justify="center" position="relative">
-            <RoomImage imgUrl={data?.imageUrl} />
+            <RoomImage imgUrl={data.imageUrl} />
             {data.productList.map((product) => (
               <ToolTip
                 key={product.productId}
