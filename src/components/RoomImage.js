@@ -1,12 +1,12 @@
-import Grid from 'common/Grid';
+import Container from 'common/Container';
 import Img from 'common/Img';
 import React from 'react';
 
 const RoomImage = ({ imgUrl }) => {
   return (
-    <Grid>
+    <Container>
       <Img src={imgUrl} alt="roomImage" width="800px"></Img>
-    </Grid>
+    </Container>
   );
 };
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import RoomImage from 'components/RoomImage';
-import Grid from 'common/Grid';
+import Container from 'common/Container';
 import ToolTip from 'components/ToolTip';
 import { API_URL } from 'utils/constants';
 
@@ -25,7 +25,7 @@ const App = () => {
   return (
     <>
       {data && (
-        <Grid isFlex justify="center" position="relative">
+        <Container isFlex justify="center" position="relative">
           <RoomImage imgUrl={data?.imageUrl} />
           {data.productList.map((product) => (
             <ToolTip
@@ -35,7 +35,7 @@ const App = () => {
               setClickedId={setClickedId}
             />
           ))}
-        </Grid>
+        </Container>
       )}
     </>
   );
