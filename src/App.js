@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { RoomImage, ToolTip } from 'components';
+import { ProductImageCard, RoomImage, ToolTip } from 'components';
 import { Container } from 'common';
 import { API_URL } from 'utils';
 
@@ -26,17 +26,24 @@ const App = () => {
   return (
     <>
       {data ? (
-        <Container isFlex justify="center" position="relative">
-          <RoomImage imgUrl={data?.imageUrl} />
-          {data.productList.map((product) => (
-            <ToolTip
-              key={product.productId}
-              productInfo={product}
-              clickedId={clickedId}
-              setClickedId={setClickedId}
-            />
-          ))}
-        </Container>
+        <>
+          <Container isFlex justify="center" position="relative">
+            <RoomImage imgUrl={data?.imageUrl} />
+            {data.productList.map((product) => (
+              <ToolTip
+                key={product.productId}
+                productInfo={product}
+                clickedId={clickedId}
+                setClickedId={setClickedId}
+              />
+            ))}
+          </Container>
+          <ProductImageCard
+            productList={data.productList}
+            clickedId={clickedId}
+            setClickedId={setClickedId}
+          />
+        </>
       ) : (
         <Container>{errMessage}</Container>
       )}

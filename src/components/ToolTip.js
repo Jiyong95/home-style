@@ -31,12 +31,24 @@ const ToolTip = ({ productInfo, clickedId, setClickedId }) => {
       }}
     >
       {clickedId === productInfo.productId ? (
-        <Container sx={{ zIndex: 1 }}>
-          <Img width="32px" height="32px" src={CLOSE_ICON} alt="searchIcon" />
+        <Container>
+          <Img
+            width="32px"
+            height="32px"
+            src={CLOSE_ICON}
+            alt="searchIcon"
+            sx={{ cursor: 'pointer' }}
+          />
           <ProductInfoCard productInfo={productInfo} />
         </Container>
       ) : (
-        <Img width="32px" height="32px" src={SEARCH_ICON} alt="closeIcon" />
+        <Img
+          width="32px"
+          height="32px"
+          src={SEARCH_ICON}
+          alt="closeIcon"
+          sx={{ cursor: 'pointer' }}
+        />
       )}
     </Container>
   );
