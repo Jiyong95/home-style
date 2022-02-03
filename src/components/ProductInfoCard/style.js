@@ -1,12 +1,57 @@
 import styled from 'styled-components';
 
+const containerPosition = (position) => {
+  switch (position) {
+    case 'topleft':
+      return `top: 28px; left: -20px;`;
+    case 'topright':
+      return `top: 28px; left: -160px;`;
+    case 'bottomleft':
+      return `bottom: 52px; left: -20px;`;
+    case 'bottomright':
+      return `bottom: 52px; left: -160px;`;
+    default:
+      return '';
+  }
+};
+const beforePosition = (position) => {
+  switch (position) {
+    case 'topleft':
+      return `
+        top: -8px;
+        left: 30px;
+        width: 12px;
+        height: 8px;`;
+    case 'topright':
+      return `
+        top: -8px;
+        right: 45px;
+        width: 12px;
+        height: 8px;`;
+    case 'bottomleft':
+      return `
+      bottom: -8px;
+      left: 30px;
+      width: 12px;
+      height: 8px;
+      transform: rotate(180deg);`;
+    case 'bottomright':
+      return `
+        bottom: -8px;
+        right: 45px;
+        width: 12px;
+        height: 8px;
+        transform: rotate(180deg);`;
+    default:
+      return '';
+  }
+};
+
 const Container = styled.span`
   z-index: 1000;
   display: flex;
   align-items: center;
   position: absolute;
-  top: 28px;
-  left: -20px;
   background-color: rgba(255, 255, 255, 0.95);
   width: 220px;
   height: 86px;
@@ -17,17 +62,15 @@ const Container = styled.span`
   box-shadow: 3px 3px 8px 0 rgb(0 0 0 / 20%);
   font-size: 14px;
   color: #4a4a4a;
+  ${(props) => props.position && `${containerPosition(props.position)}`}
   &::before {
     content: '';
     position: absolute;
-    top: -8px;
-    left: 34px;
-    width: 12px;
-    height: 8px;
     background-image: url(//cdn.ggumim.co.kr/storage/20211118152728RO3OXnhkrC.png);
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 1100;
+    ${(props) => props.position && `${beforePosition(props.position)}`}
   }
 `;
 

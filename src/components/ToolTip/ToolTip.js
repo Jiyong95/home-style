@@ -2,15 +2,18 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Container, Image } from './style';
 import { SEARCH_ICON, CLOSE_ICON } from 'utils';
 import { ProductInfoCard } from 'components';
+import { RoomImgWidth } from 'utils/constants';
 
 const ToolTip = ({ productInfo, clickedId, setClickedId }) => {
-  const [spaceWidth, setSpaceWidth] = useState((window.innerWidth - 800) / 2);
+  const [spaceWidth, setSpaceWidth] = useState(
+    (window.innerWidth - RoomImgWidth) / 2
+  );
   let timer = useRef(null);
 
   const handleWindow = useCallback(() => {
     clearTimeout(timer.current);
     timer.current = setTimeout(() => {
-      setSpaceWidth((window.innerWidth - 800) / 2);
+      setSpaceWidth((window.innerWidth - RoomImgWidth) / 2);
     }, [100]);
   }, [timer]);
 

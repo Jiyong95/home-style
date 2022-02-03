@@ -12,12 +12,22 @@ import {
 } from './style';
 import React from 'react';
 import { ARROW_ICON } from 'utils';
+import { getPosition } from 'utils/getPosition';
+import { RoomImgHeight, RoomImgWidth } from 'utils/constants';
 
 const ProductInfoCard = ({
-  productInfo: { imageUrl, productName, discountRate, priceDiscount },
+  productInfo: {
+    imageUrl,
+    productName,
+    discountRate,
+    priceDiscount,
+    pointX,
+    pointY,
+  },
 }) => {
+  const position = getPosition(pointX, pointY, RoomImgWidth, RoomImgHeight);
   return (
-    <Container>
+    <Container position={position}>
       <CardImage bgUrl={imageUrl} />
       <InfoWrap isFlex column justify="space-between">
         <FunitureName>{productName}</FunitureName>
