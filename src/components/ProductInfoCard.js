@@ -3,6 +3,7 @@ import Container from 'common/Container';
 import Img from 'common/Img';
 import React from 'react';
 import { ARROW_ICON } from 'utils/constants';
+import addCommaToMoney from 'utils/formatMoney';
 
 const ProductInfoCard = ({
   productInfo: {
@@ -65,7 +66,7 @@ const ProductInfoCard = ({
               fontWeight: 'bold',
             }}
           >
-            {priceDiscount}
+            {addCommaToMoney(priceDiscount)}
           </span>
         </Container>
       </Container>
