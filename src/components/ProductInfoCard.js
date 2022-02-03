@@ -1,9 +1,6 @@
-import Card from 'common/Card';
-import Container from 'common/Container';
-import Img from 'common/Img';
+import { Card, Container, Img } from 'common';
 import React from 'react';
-import { ARROW_ICON } from 'utils/constants';
-import addCommaToMoney from 'utils/formatMoney';
+import { ARROW_ICON } from 'utils';
 
 const ProductInfoCard = ({
   productInfo: {
@@ -66,7 +63,7 @@ const ProductInfoCard = ({
               fontWeight: 'bold',
             }}
           >
-            {addCommaToMoney(priceDiscount)}
+            {priceDiscount.toLocaleString()}
           </span>
         </Container>
       </Container>

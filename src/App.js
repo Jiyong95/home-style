@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import RoomImage from 'components/RoomImage';
-import Container from 'common/Container';
-import ToolTip from 'components/ToolTip';
-import { API_URL } from 'utils/constants';
+import { RoomImage, ToolTip } from 'components';
+import { Container } from 'common';
+import { API_URL } from 'utils';
 
 const App = () => {
   const [data, setData] = useState(null);
   const [clickedId, setClickedId] = useState(null);
+  const [errMessage, setErrMessage] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -16,6 +16,7 @@ const App = () => {
         setData(apiData);
       } catch (err) {
         console.log(err);
+        setErrMessage(err);
       }
     };
     getData();
@@ -24,7 +25,7 @@ const App = () => {
   console.log(data);
   return (
     <>
-      {data && (
+      {data ? (
         <Container isFlex justify="center" position="relative">
           <RoomImage imgUrl={data?.imageUrl} />
           {data.productList.map((product) => (
@@ -36,6 +37,8 @@ const App = () => {
             />
           ))}
         </Container>
+      ) : (
+        <Container>{errMessage}</Container>
       )}
     </>
   );

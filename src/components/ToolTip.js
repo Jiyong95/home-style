@@ -1,8 +1,7 @@
-import Container from 'common/Container';
-import Img from 'common/Img';
+import { Container, Img } from 'common';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { SEARCH_ICON, CLOSE_ICON } from 'utils/constants';
-import ProductInfoCard from './ProductInfoCard';
+import { SEARCH_ICON, CLOSE_ICON } from 'utils';
+import { ProductInfoCard } from 'components';
 
 const ToolTip = ({ productInfo, clickedId, setClickedId }) => {
   const [spaceWidth, setSpaceWidth] = useState((window.innerWidth - 800) / 2);

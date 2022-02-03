@@ -1,5 +1,4 @@
-import Container from 'common/Container';
-import Img from 'common/Img';
+import { Container, Img } from 'common';
 import React from 'react';
 
 const RoomImage = ({ imgUrl }) => {
