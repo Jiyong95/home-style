@@ -2,12 +2,12 @@ import Grid from 'common/Grid';
 import Img from 'common/Img';
 import React from 'react';
 
-const RoomImage = ({ data }) => {
+const RoomImage = ({ imgUrl }) => {
   return (
     <Grid>
-      <Img src={data.imageUrl} alt="roomImage" width="800px"></Img>
+      <Img src={imgUrl} alt="roomImage" width="800px"></Img>
     </Grid>
   );
 };
 
-export default RoomImage;
+export default React.memo(RoomImage);
