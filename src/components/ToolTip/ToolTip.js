@@ -1,5 +1,5 @@
-import { Container, Img } from 'common';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { Container, Image } from './style';
 import { SEARCH_ICON, CLOSE_ICON } from 'utils';
 import { ProductInfoCard } from 'components';
 
@@ -24,7 +24,7 @@ const ToolTip = ({ productInfo, clickedId, setClickedId }) => {
       position="absolute"
       top={productInfo.pointX * 1.6}
       left={spaceWidth + productInfo.pointY * 1.6}
-      _onClick={() => {
+      onClick={() => {
         clickedId === productInfo.productId
           ? setClickedId(null)
           : setClickedId(productInfo.productId);
@@ -32,23 +32,11 @@ const ToolTip = ({ productInfo, clickedId, setClickedId }) => {
     >
       {clickedId === productInfo.productId ? (
         <Container>
-          <Img
-            width="32px"
-            height="32px"
-            src={CLOSE_ICON}
-            alt="searchIcon"
-            sx={{ cursor: 'pointer' }}
-          />
+          <Image src={CLOSE_ICON} alt="searchIcon" />
           <ProductInfoCard productInfo={productInfo} />
         </Container>
       ) : (
-        <Img
-          width="32px"
-          height="32px"
-          src={SEARCH_ICON}
-          alt="closeIcon"
-          sx={{ cursor: 'pointer' }}
-        />
+        <Image src={SEARCH_ICON} alt="closeIcon" />
       )}
     </Container>
   );

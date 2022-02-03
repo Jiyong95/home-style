@@ -1,32 +1,27 @@
-import { Container, Img } from 'common';
-import React from 'react';
 import styled from 'styled-components';
 
-const ProductImageCard = ({ productList, clickedId, setClickedId }) => {
-  return (
-    <Container isFlex justify="center" sx={{ overFlow: 'scrollX' }}>
-      {productList.map((product) => (
-        <CardWrap
-          key={product.productId}
-          clicked={clickedId === product.productId ? true : null}
-        >
-          <CardImage
-            bgUrl={product.imageUrl}
-            onClick={() => {
-              clickedId === product.productId
-                ? setClickedId(null)
-                : setClickedId(product.productId);
-            }}
-          >
-            {product.discountRate !== 0 && (
-              <DiscountBadge>{`${product.discountRate}%`}</DiscountBadge>
-            )}
-          </CardImage>
-        </CardWrap>
-      ))}
-    </Container>
-  );
-};
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: auto;
+  background-color: #fff;
+  padding: 0 10px;
+  width: 800px;
+  margin: 0 auto;
+`;
+
+const Wrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+  justify-content: center;
+  align-items: center;
+`;
 
 const CardWrap = styled.div`
   display: inline-flex;
@@ -52,6 +47,10 @@ const CardImage = styled.div`
   border-radius: 16px;
   border: 0.5px solid #aaafb9;
   user-select: none;
+  cursor: pointer;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const DiscountBadge = styled.div`
@@ -72,4 +71,7 @@ const DiscountBadge = styled.div`
   padding-left: 1px;
 `;
 
-export default ProductImageCard;
+const Text = styled.span`
+  font-size: 8px;
+`;
+export { Container, Wrapper, CardWrap, CardImage, DiscountBadge, Text };
